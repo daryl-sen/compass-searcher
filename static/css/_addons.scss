@@ -1,0 +1,102 @@
+.lined {
+  border: 1px solid $line_color;
+}
+
+.dashed {
+  border: 1px dashed $line_color;
+}
+
+.dotted {
+  border: 1px dotted $line_color;
+}
+
+.hidden {
+  display: none;
+}
+
+.padded {
+  padding: $standard_padding;
+}
+
+.display-block {
+  display: block;
+}
+
+.rounded {
+  border-radius: 1em 1em 1em 1em;
+  -moz-border-radius: 1em 1em 1em 1em;
+  -webkit-border-radius: 1em 1em 1em 1em;
+}
+
+.shadowed {
+  -webkit-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.1);;
+  box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.1);;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+.bg-green {
+  background-color: green;
+}
+.bg-red {
+  background-color: red;
+}
+.bg-yellow {
+  background-color: #FED766;
+}
+.bg-gray {
+  background-color: #eeeeee;
+}
+
+.border-left-accent {
+  border-left: 5px solid $primary_color;
+  padding: 0.5em 1em;
+}
+
+.notification {
+  padding: $standard_padding;
+  border: 1px solid $line_color;
+  line-height: 1.5em;
+  margin: $standard_padding 0;
+}
+.notification::before {
+  content: '\26A0';
+  font-size: 1.5em;
+  padding-left: 0;
+}
+.notification::after {
+  content: 'Dismiss';
+  display: block;
+  text-align: right;
+  border-top: 1px solid $line_color;
+  margin-top: 0.5em;
+  color: #595959;
+}
+
+.spaced {
+  margin-bottom: 1em;
+}
+
+.spacer-small {
+  margin-bottom: 2em;
+}
+
+.spacer-medium {
+  margin-bottom: 4em;
+}
+
+.spacer-large {
+  margin-bottom: 10em;
+}
+
+.confined {
+  max-width: $confined-width;
+  margin-left: auto;
+  margin-right: auto;
+}

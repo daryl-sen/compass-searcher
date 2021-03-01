@@ -1,0 +1,78 @@
+h2, h3, h4, h5 {
+  margin: 0.5em 0;
+}
+
+h1 {
+  color: $heading1_color;
+  font-size: $heading1_size;
+  margin: 1em 0;
+}
+
+h2 {
+  color: $heading2_color;
+  font-size: $heading2_size;
+}
+
+h3 {
+  color: $heading3_color;
+  font-size: $heading3_size;
+}
+
+h4 {
+  color: $heading4_color;
+  font-size: $heading4_size;
+}
+
+h5 {
+  color: $heading5_color;
+  font-size: $heading5_size;
+}
+
+p {
+  line-height: 150%;
+  font-size: 1em;
+}
+
+a:link {
+  color: #ff3939;
+}
+a:hover {
+  color: #881818;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+
+
+pre {
+  padding: 0.5em;
+  font-size: 1em;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+code {
+  padding: 0.2em;
+  font-size: 0.9em;
+}
+pre, code {
+  background-color: #c7c7c7;
+  line-height: 150%;
+  font-family: monospace;
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+}
+
+ul, ol {
+  margin: 1em 0;
+}
+ul li, ol li {
+  padding: 0.1em 0;
+}

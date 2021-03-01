@@ -1,0 +1,22 @@
+.side-by-side {
+  display: flex;
+  justify-content: space-between;
+}
+.side-by-side>div {
+  margin: 1em;
+  flex: 1 1 0px;
+}
+.side-by-side>div:first-child {
+  margin-left: 0;
+}
+.side-by-side>div:last-child {
+  margin-right: 0;
+}
+
+.big-small {
+  display: flex;
+}
+
+.small-big {
+  display: flex;
+}
