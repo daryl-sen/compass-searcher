@@ -46,7 +46,7 @@ You can use this online without any setup. The following is only needed if you w
 ! Current as of March 2021 - this method may change in the future.
 1. Make a copy of the `.env.example` file and rename it to `.env`.
 2. Logout of github if you're currently logged in. Open the network tab of your developer console on the github login page, and then log back in to github.
-3. In the network tab, the first item should be `session`. Click on it, then scroll down to `Response headers`. Look for the `set-cookie` key that has a really long value and copy the value up to the first semicolon (do not include the semicolon). Paste this value in the `.env` file, surrounded by quotes. You should end up with `GIT_COOKIE='<your cookie here>'`,
+3. In the network tab, the first item should be `session`. Right click on it and select `Copy` then `Copy as cURL`. Paste into any text editing software and look for the line starting with `  -H 'cookie:`. Copy everything starting from (not including) the first `:` to the last single quote `'` (not including the quote). Paste this value in the `.env` file, surrounded by single or double quotes. You should end up with `GIT_COOKIE='<your cookie here>'`,
 4. Scroll down to `Form Data` and look for the `authenticity_token`, `login`, `password`, `timestamp`, and `timestamp_secret` keys. Copy these values into the corresponding keys in your `.env` file.
 5. Once this is set up, run `python scraper/test.py online` in the root folder of this project directory. If you're not getting any errors or an empty array, the scraper has been set up correctly and is now ready to use. Run `python scraper/run.py` to start scraping and populating your database!
 
