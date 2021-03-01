@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    span {
+      background-color: yellow;
+    }
+    form {
+      margin-bottom: 2em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Results</h1>
+
+  <form action="{{ url_for('api.mpa_search') }}" method="GET">
+    <input name="term" type="text" placeholder="search term">
+    <input type="submit" value="Search">
+  </form>
+
+  <table>
+    <tr>
+      <th>HEADING</th>
+      <th>TYPE</th>
+      <th>CONTEXT</th>
+      <th>OPEN</th>
+    </tr>
+    {% if results != 'None' %}
+      {% for result in results %}
+        <tr>
+          <td>{{ result.heading }}</td>
+          <td>{{ result.type|safe }}</td>
+          <td>{{ result.context|safe }}</td>
+          <td><a href="{{ result.URL }}" target="_blank">Open</a></td>
+        </tr>
+      {% endfor %}
+    {% else %}
+      <tr>
+        <td>
+          No results
+        </td>
+      </tr>
+    {% endif %}
+  </table>
+</body>
+</html>
