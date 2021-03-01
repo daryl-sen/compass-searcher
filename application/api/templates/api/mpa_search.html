@@ -12,6 +12,22 @@
     form {
       margin-bottom: 2em;
     }
+    table, td, th {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 0.5em;
+    }
+    td.dark-bg {
+      background-color: rgb(95, 95, 95);
+      color: #fff;
+    }
+    th {
+      background-color: black;
+      color: white;
+      font-weight: bold;
+    }
+    tr:nth-child(even) {background: rgb(231, 231, 231)}
+    tr:nth-child(odd) {background: #FFF}
   </style>
 </head>
 <body>
@@ -25,17 +41,17 @@
   <table>
     <tr>
       <th>HEADING</th>
+      <th>WEEK</th>
       <th>TYPE</th>
       <th>CONTEXT</th>
-      <th>OPEN</th>
     </tr>
     {% if results != 'None' %}
       {% for result in results %}
         <tr>
-          <td>{{ result.heading }}</td>
-          <td>{{ result.type|safe }}</td>
+          <td><a href="{{ result.URL }}" target="_blank">{{ result.heading }}</a></td>
+          <td>{{ result.ref_id }}</td>
+          <td class="dark-bg">{{ result.type|safe }}</td>
           <td>{{ result.context|safe }}</td>
-          <td><a href="{{ result.URL }}" target="_blank">Open</a></td>
         </tr>
       {% endfor %}
     {% else %}
