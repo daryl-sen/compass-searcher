@@ -1,5 +1,5 @@
 .env
 /env
 __pycache__
-.sqlite
+data.sqlite
 /migrations
