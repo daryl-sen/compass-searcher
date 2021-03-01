@@ -21,7 +21,7 @@ def production_test():
 
   # find day 1 activity 1
   day_content = fetch_activity_content(ses, BASE_URL, day_schedule[0])
-  if len(day_schedule) != 0:
+  if len(day_content) != 0:
     print('Fetched day content')
   else:
     return print('Error fetching day content')
@@ -50,7 +50,7 @@ def offline_test():
 
   # find day 1 activity 1
   day_content = fetch_activity_content(ses, BASE_URL, '/offline_test/3')
-  if len(day_schedule) != 0:
+  if len(day_content) != 0:
     print('Fetched day content')
   else:
     return print('Error fetching day content')  
