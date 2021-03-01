@@ -18,7 +18,15 @@ Compass Searcher uses React.js as the frontend, a SQLite database, and Python Fl
 
 
 ## Installation Instructions
-You can run this application locally if you like, but you need to supply your own Git username and password. This is required for the crawler to login to Compass. All the code here is open source, nobody's going to steal your login information. More setup details to come.
+You can use this online without any setup. The following is only needed if you want to run this app locally. Note that you need to supply your own Git username and password in the .env file. This is required for the crawler to login to Compass. All the code here is open source, nobody's going to steal your login information. More setup details to come.
+
+### Python Flask setup
+1. Install dependencies - create a python virtual environment using `venv` or `virtualenv` and activate the environment.
+2. Run `pip install -r requirements.txt` to automatically install python dependencies
+3. Run `flask db init` to initialize the SQLite database
+4. Run `flask db migrate` to migrate (setup) the database using the app's models
+5. Run `flask db upgrade` to commit the initiation process.
+
 
 ### Dependencies
 #### Python 3.5 or higher
