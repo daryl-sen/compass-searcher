@@ -7,18 +7,24 @@ def production_test():
 
   ses = login_to_compass()
   activity_links = fetch_day_links(ses, BASE_URL, '/days/today')
-  print(activity_links)
-  print('\n\n\n')
+  if len(activity_links) != 0:
+    print('Login successful')
+  else:
+    return print('Login failed')
 
   # find day 1 schedule
   day_schedule = fetch_activity_links(ses, BASE_URL, activity_links[0])
-  print(day_schedule)
-  print('\n\n\n')
+  if len(day_schedule) != 0:
+    print('Fetched day schedule')
+  else:
+    return print('Error fetching day schedule')
 
   # find day 1 activity 1
   day_content = fetch_activity_content(ses, BASE_URL, day_schedule[0])
-  print(day_content)
-  print('\n\n\n')
+  if len(day_schedule) != 0:
+    print('Fetched day content')
+  else:
+    return print('Error fetching day content')
 
 # test that runs on a fake LHL page setup on localhost
 def offline_test():
@@ -30,23 +36,24 @@ def offline_test():
   ses = requests.Session()
 
   activity_links = fetch_day_links(ses, BASE_URL, '/offline_test/1')
-  # print(activity_links)
-  # print('\n\n\n')
+  if len(activity_links) != 0:
+    print('Login successful')
+  else:
+    return print('Login failed')
 
   # find day 1 schedule
   day_schedule = fetch_activity_links(ses, BASE_URL, '/offline_test/2')
-  # print(day_schedule)
-  # print('\n\n\n')
+  if len(day_schedule) != 0:
+    print('Fetched day schedule')
+  else:
+    return print('Error fetching day schedule')
 
   # find day 1 activity 1
   day_content = fetch_activity_content(ses, BASE_URL, '/offline_test/3')
-  # print(day_content)
-  # print('\n\n\n')
-
-  write_to_db(day_content)
-
-
-  
+  if len(day_schedule) != 0:
+    print('Fetched day content')
+  else:
+    return print('Error fetching day content')  
 
 
 
