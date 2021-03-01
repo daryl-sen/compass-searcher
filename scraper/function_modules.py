@@ -81,9 +81,9 @@ def write_to_db(day_content):
     if len(day_content['metadata'][0].contents) > 1:
       page_type = str(day_content['metadata'][0].contents[1])
 
-  page_instructions = str(day_content['instructions'])
-  page_ref_id = str(day_content['ref_id'])
-  page_link = str(day_content['URL'])
+  page_instructions = day_content['instructions'].get_text()
+  page_ref_id = day_content['ref_id']
+  page_link = day_content['URL']
 
   # write the extracted data into database
   new_page = Pages(page_ref_id, page_heading, page_type, page_duration, page_instructions, page_link)
