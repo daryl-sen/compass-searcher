@@ -81,7 +81,11 @@ def write_to_db(day_content):
     if len(day_content['metadata'][0].contents) > 1:
       page_type = str(day_content['metadata'][0].contents[1])
 
-  page_instructions = day_content['instructions'].get_text()
+  if day_content['instructions'] is not None:
+    page_instructions = day_content['instructions'].get_text()
+  else:
+    page_instructions = 'Empty'
+    
   page_ref_id = day_content['ref_id']
   page_link = day_content['URL']
 
