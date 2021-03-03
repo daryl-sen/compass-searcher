@@ -25,3 +25,6 @@ app.register_blueprint(core, url_prefix="/")
 
 from application.api.views import api
 app.register_blueprint(api, url_prefix="/api")
+
+from application.mpa.views import mpa
+app.register_blueprint(mpa, url_prefix="/mpa")
