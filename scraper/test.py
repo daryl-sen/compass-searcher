@@ -41,7 +41,6 @@ def offline_test():
   activity_links = fetch_day_links(ses, BASE_URL, '/offline_test/1')
   if len(activity_links) != 0:
     print('Successfully fetched activity links')
-    print(activity_links)
   else:
     print('Fetching activity links failed')
     return
