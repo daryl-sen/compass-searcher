@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compass Searcher</title>
+{% extends 'base.html' %}
+
+{% block head_addons %}
   <style>
     span.highlighted {
       background-color: yellow;
@@ -28,41 +24,82 @@
     }
     tr:nth-child(even) {background: rgb(231, 231, 231)}
     tr:nth-child(odd) {background: #FFF}
-  </style>
-</head>
-<body>
-  <h1>Results</h1>
 
-  <form action="{{ url_for('mpa.search') }}" method="GET">
+    h2 {
+      
+    }
+
+    h3, h4 {
+      font-size: 0.9em;
+      padding: 0.25em 0.5em;
+      border-radius: 10px 10px 10px 10px;
+      -moz-border-radius: 10px 10px 10px 10px;
+      -webkit-border-radius: 10px 10px 10px 10px;
+    }
+
+    h3 {
+      color:#393939;
+      display: inline;
+      text-transform: uppercase;
+      background-color: #e6e6e6;
+    }
+
+    h4 {
+      color: #fff;
+      font-weight: normal;
+      display: inline;
+      background-color: #393939;
+    }
+    h4>a {
+      pointer-events: none;
+      cursor: default;
+      text-decoration: none;
+    }
+
+    a.open-link {
+      display: inline-block;
+      padding: 0.5em;
+      background-color: #ff3939;
+      margin-top: 1em;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px 10px 10px 10px;
+      -moz-border-radius: 10px 10px 10px 10px;
+      -webkit-border-radius: 10px 10px 10px 10px;
+    }
+
+    a.open-link:hover {
+      background-color: #6d1616;
+    }
+  </style>
+{% endblock %}
+
+{% block page_content %}
+<main class="confined">
+  <h1 class="text-centered">Compass Searcher</h1>
+
+  <form action="{{ url_for('mpa.search') }}" method="GET" class="lined padded rounded">
     <input name="term" type="text" placeholder="search term">
-    <input type="submit" value="Search">
+    <input type="submit" value="Search" class="button-primary">
   </form>
 
-  <table>
-    <tr>
-      <th>HEADING</th>
-      <th>WEEK</th>
-      <th>TYPE</th>
-      <th>CONTEXT</th>
-    </tr>
-    {% if results != 'None' %}
-      {% for result in results %}
-        <tr>
-          <td><a href="{{ result.URL }}" target="_blank">{{ result.heading }}</a></td>
-          <td>{{ result.ref_id }}</td>
-          <td class="dark-bg">{{ result.type|safe }}</td>
-          <td>
-            {{ result.context_before }}{{ result.query_term|safe }}{{ result.context_after }}
-          </td>
-        </tr>
-      {% endfor %}
-    {% else %}
-      <tr>
-        <td>
-          No results
-        </td>
-      </tr>
-    {% endif %}
-  </table>
-</body>
-</html>
+  {% if results == 'undefined' %}
+    Welcome
+  {% elif results == 'none' %}
+    No results
+  {% else %}
+    {% for result in results %}
+      <div class="bg-white shadowed rounded padded spaced">
+        <h2>{{ result.heading }}</h2>
+        <div class="spaced">
+          <h3>{{ result.ref_id }}</h3>
+          <h4>{{ result.type|safe }}</h4>
+        </div>
+        <div class="border-left-accent">{{ result.context_before }}{{ result.query_term|safe }}{{ result.context_after }}</div>
+        <a href="{{ result.URL }}" target="_blank" class="open-link">Open in Compass</a>
+      </div>
+    {% endfor %}
+  {% endif %}
+
+</main>
+{% endblock %}

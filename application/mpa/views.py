@@ -11,7 +11,7 @@ def search():
   if request.args.get('term'):
     query_term = request.args.get('term')
   else:
-    return render_template('mpa_search.html', results = 'None')
+    return render_template('mpa_search.html', results = 'undefined')
 
   results = Pages.query.filter(Pages.instructions.contains(query_term)).all()
 
@@ -42,4 +42,4 @@ def search():
     } for result in results
   ]
 
-  return render_template('mpa_search.html', results = processed_results)
+  return render_template('mpa_search.html', results = processed_results if len(processed_results) != [] else 'none')
