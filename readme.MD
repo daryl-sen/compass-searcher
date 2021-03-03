@@ -1,5 +1,7 @@
 # Compass Searcher
 
+(Work in progress)
+
 You've probably noticed that LHL compass doesn't have a search button. Perhaps it's an oversight, perhaps it's intentional. At the end of the day, it's just a huge inconvenience!
 
 Imagine trying to find specific instructions from a previous day or previous week, checking the pages one by one like some archaic dinosaur. Well, that's going to change. Before we get started...
