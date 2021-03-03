@@ -29,6 +29,10 @@ def login_to_compass():
 
 # day links - links that link to specific day schedules
 def fetch_day_links(s, BASE_URL, homepage_url):
+  # fetch existing pages so those pages don't get re-run every time
+  existing_links_query = db.engine.execute('SELECT DISTINCT ref_id FROM pages;')
+  existing_links = [ ('/days/' + ref_id[0]) for ref_id in existing_links_query ]
+
   print('- Fetching day links from: ' + BASE_URL + homepage_url)
   # access the compass homepage, which contains links to all the pages
   request_homepage = s.get(BASE_URL + homepage_url)
@@ -36,7 +40,9 @@ def fetch_day_links(s, BASE_URL, homepage_url):
   # analyze the homepage content to get day links
   content = BeautifulSoup(request_homepage.content, features='lxml')
   link_elements_container = content.find_all("td", class_="day unlocked")
-  day_links = [ link.find('a').get('href') for link in link_elements_container]
+  all_day_links = [ link.find('a').get('href') for link in link_elements_container]
+
+  day_links = [ day_link for day_link in all_day_links if day_link not in existing_links ]
   return day_links
 
 # activity links - links in a day's schedule that link to a day's activities

@@ -2,6 +2,8 @@ from function_modules import BASE_URL, login_to_compass, fetch_day_links, fetch_
 
 
 def run():
+  existing_pages = []
+
   BASE_URL = 'https://web.compass.lighthouselabs.ca'
 
   ses = login_to_compass()
