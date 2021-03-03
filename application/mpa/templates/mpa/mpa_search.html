@@ -84,9 +84,29 @@
   </form>
 
   {% if results == 'undefined' %}
-    Welcome
-  {% elif results == 'none' %}
-    No results
+    <div class="text-centered">
+      <h2>Welcome to Compass Searcher!</h2>
+      <p>
+        You've probably noticed that LHL compass doesn't have a search button. Perhaps it's an oversight, perhaps it's intentional. At the end of the day, it's just a huge inconvenience!
+      </p>
+      <p>
+        Imagine trying to find specific instructions from a previous day or previous week, checking the pages one by one like some archaic dinosaur. Well, that's going to change. Simply type your search term above and start searching!
+      </p>
+      <h2>Work in progress</h2>
+      <p>
+        This is still a work in progress, there are many bugs to iron out, and new features that I'd like to implement. If you're interested in collaborating, please feel free to contact me! If you notice any bugs, please <a href="https://www.bugdiary.com/r/UkZs7KSKdCt52CnBgm3RE6">report them here</a>.
+      </p>
+    </div>
+  {% elif results == [] %}
+    <div class="text-centered">
+      <h2>No results</h2>
+      <p>
+        Sorry pal this ain't google :(
+      </p>
+      <p>
+        The search uses something like an `ILIKE` query, so please try to make your search term short. Also it's a known bug that searching terms containing html tags will produce unexpected results.
+      </p>
+    </div>
   {% else %}
     {% for result in results %}
       <div class="bg-white shadowed rounded padded spaced">

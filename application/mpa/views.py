@@ -42,4 +42,4 @@ def search():
     } for result in results
   ]
 
-  return render_template('mpa_search.html', results = processed_results if len(processed_results) != [] else 'none')
+  return render_template('mpa_search.html', results = processed_results)

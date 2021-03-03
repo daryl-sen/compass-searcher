@@ -111,6 +111,9 @@ nav {
     height: 40px;
     background-size: 40px 40px;
     padding-left: 50px; }
+  nav #logo-with-text > a:link, nav #logo-with-text > a:hover, nav #logo-with-text > a:visited {
+    color: #fff;
+    text-decoration: none; }
 
 nav ul {
   font-size: 1.1rem;
