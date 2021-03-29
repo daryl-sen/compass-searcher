@@ -2,9 +2,11 @@
 
 (Work in progress)
 
-You've probably noticed that LHL compass doesn't have a search button. Perhaps it's an oversight, perhaps it's intentional. At the end of the day, it's just a huge inconvenience!
+Compass Searcher is a web crawler program I built when I was taking online bootcamp classes at Lighthouse Labs (LHL). The online learning portal did not have any search functionality, so I build a web crawler to crawl and store all the pages into an indexed database for easy searching.
 
-Imagine trying to find specific instructions from a previous day or previous week, checking the pages one by one like some archaic dinosaur. Well, that's going to change. Before we get started...
+The web crawler was initially difficult to program because the learning portal requires the user to be logged in to view. It must first log in to Github, then log in to LHL. I was able to overcome this obstacle by carefully sifting through the network tab in Google Chrome's web developer tools, looking for recurring data that pointed me to the right post and get requests to make in order to log in.
+
+Compass Searcher is hosted on PythonAnywhere as it is a quick way to deploy a project that wouldn't take up too much of my limited time during bootcamp. My initial plan was to create this app with ReactJS frontend and Express backend, but switched to a Flask backend with vanilla HTML and CSS to save time.
 
 ## Copyright Disclaimmer
 
@@ -20,7 +22,7 @@ Compass Searcher uses React.js as the frontend, a SQLite database, and Python Fl
 
 
 ## Installation Instructions
-You can use this online without any setup. The following is only needed if you want to run this app locally. Note that you need to supply your own Git username and password in the .env file. This is required for the crawler to login to Compass. All the code here is open source, nobody's going to steal your login information. More setup details to come.
+You can use this online without any setup. The following is only needed if you want to run this app locally. Note that you need to supply your own Git username and password in the .env file. This is required for the crawler to login to Compass.
 
 ### Dependencies
 #### Python 3.5 or higher
