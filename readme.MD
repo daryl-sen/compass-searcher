@@ -6,7 +6,9 @@ Compass Searcher is a web crawler program I built when I was taking online bootc
 
 The web crawler was initially difficult to program because the learning portal requires the user to be logged in to view. It must first log in to Github, then log in to LHL. I was able to overcome this obstacle by carefully sifting through the network tab in Google Chrome's web developer tools, looking for recurring data that pointed me to the right post and get requests to make in order to log in.
 
-Compass Searcher is hosted on PythonAnywhere as it is a quick way to deploy a project that wouldn't take up too much of my limited time during bootcamp. My initial plan was to create this app with ReactJS frontend and Express backend, but switched to a Flask backend with vanilla HTML and CSS to save time.
+My initial plan was to create this app with ReactJS frontend and Express backend and host it on a basic VPS on digital ocean, but switched to using a Flask backend and vanilla HTML and CSS frontend to save time. This project is currently hosted on PythonAnywhere.
+
+![Example search result](https://github.com/daryl-sen/compass-searcher/blob/master/documents/searchresults.png?raw=true)
 
 ## Copyright Disclaimmer
 
@@ -35,8 +37,6 @@ You can use this online without any setup. The following is only needed if you w
 * flask-migrate
 * flask-login
 * flask-wtf
-#### Node (React)
-* Details to come
 
 ### Python Flask setup
 1. Install dependencies - create a python virtual environment using `venv` or `virtualenv` and activate the environment.
