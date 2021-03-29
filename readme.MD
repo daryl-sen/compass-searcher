@@ -2,9 +2,9 @@
 
 (Work in progress)
 
-Compass Searcher is a web crawler program I built when I was taking online bootcamp classes at Lighthouse Labs (LHL). The online learning portal did not have any search functionality, so I build a web crawler to crawl and store all the pages into an indexed database for easy searching.
+Compass Searcher is a web scraper program I built when I was taking online bootcamp classes at Lighthouse Labs (LHL). The online learning portal did not have any search functionality, so I build a web scraper to crawl and store all the pages into an indexed database for easy searching.
 
-The web crawler was initially difficult to program because the learning portal requires the user to be logged in to view. It must first log in to Github, then log in to LHL. I was able to overcome this obstacle by carefully sifting through the network tab in Google Chrome's web developer tools, looking for recurring data that pointed me to the right post and get requests to make in order to log in.
+The web scraper was initially difficult to program because the learning portal requires the user to be logged in to view. It must first log in to Github, then log in to LHL. I was able to overcome this obstacle by carefully sifting through the network tab in Google Chrome's web developer tools, looking for recurring data that pointed me to the right post and get requests to make in order to log in.
 
 My initial plan was to create this app with ReactJS frontend and Express backend and host it on a basic VPS on digital ocean, but switched to using a Flask backend and vanilla HTML and CSS frontend to save time. This project is currently hosted on PythonAnywhere.
 
@@ -15,7 +15,7 @@ My initial plan was to create this app with ReactJS frontend and Express backend
 Compass Searcher only provides a clickable link back to the target page and a short snippet (shorter than a tweet) to give context around the search term. It does not provide access to protected content (i.e. content that requires login).
 
 ## How Does It Work?
-Compass Searcher has a page crawler component that logs in to compass and caches relevant parts of each page (using the calendar as an index). This information is stored inside an indexed databased which is refreshed in sync with course progress. When the user enters a search term, Compass Searcher searches the database and returns the pages that match the search term, providing a very short snippet around the search term for context.
+Compass Searcher has a page scraper component that logs in to compass and caches relevant parts of each page (using the calendar as an index). This information is stored inside an indexed databased which is refreshed in sync with course progress. When the user enters a search term, Compass Searcher searches the database and returns the pages that match the search term, providing a very short snippet around the search term for context.
 
 ## Stack
 Compass Searcher uses React.js as the frontend, a SQLite database, and Python Flask as the backend framework. Why Flask instead of Express?
@@ -24,13 +24,13 @@ Compass Searcher uses React.js as the frontend, a SQLite database, and Python Fl
 
 
 ## Installation Instructions
-You can use this online without any setup. The following is only needed if you want to run this app locally. Note that you need to supply your own Git username and password in the .env file. This is required for the crawler to login to Compass.
+You can use this online without any setup. The following is only needed if you want to run this app locally. Note that you need to supply your own Git username and password in the .env file. This is required for the scraper to login to Compass.
 
 ### Dependencies
 #### Python 3.5 or higher
-* requests (crawler)
-* beautifulsoup4 (crawler)
-* lxml (crawler)
+* requests (scraper)
+* beautifulsoup4 (scraper)
+* lxml (scraper)
 * python-dotenv
 * flask
 * flask-sqlalchemy
